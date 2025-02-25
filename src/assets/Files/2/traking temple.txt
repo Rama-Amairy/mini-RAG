@@ -1,0 +1,5 @@
+{lpurl}?utm_campaing={campaignid}&utm_group={adgroupid}&utm_network={network}&utm_device={device}&utm_placement={placement}
+
+
+final url suffix:
+utm_source=google&utm_medium=cpc
