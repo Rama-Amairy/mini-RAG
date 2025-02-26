@@ -1,2 +1,3 @@
-from DataController import DataController
-from ProjectController import ProjectController
+from .DataController import DataController
+from .ProjectController import ProjectController
+from .ProcessController import ProcessController

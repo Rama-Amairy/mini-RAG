@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-#in this classes be sure to name them in the same way in the pydantic (Settings and Config)
+#in this classes you have to be sure to name them in the same way in the pydantic (Settings and Config)
 
 class Settings(BaseSettings):
 

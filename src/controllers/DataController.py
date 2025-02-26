@@ -22,7 +22,7 @@ class DataController(BaseController):
         if file.size > self.app_settings.FILE_MAX_SIZE * self.size_scale :
             return False, ResponseEnum.FILE_SIZE_EXCEEDED.value
         
-        return True , ResponseEnum.FILE_UPLOADED_SUCCEDED.value
+        return True , ResponseEnum.FILE_UPLOADED_SUCCEEDED.value
 
     def generate_unique_filepath(self, file_name: str, project_id:str):
         random_Key= self.generate_random_string()
@@ -33,7 +33,7 @@ class DataController(BaseController):
 
         while os.path.exists(new_file_path):
             new_file_path= os.path.join(project_path, random_Key+"_"+cleaned_file_name)
-        return new_file_path, random_Key
+        return new_file_path, random_Key+"_"+cleaned_file_name
 
 
     def clean_file_name(self, file_name: str) -> str:
