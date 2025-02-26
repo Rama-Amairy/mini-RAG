@@ -24,7 +24,7 @@ class DataController(BaseController):
         
         return True , ResponseEnum.FILE_UPLOADED_SUCCEDED.value
 
-    def generate_unique_filename(self, file_name: str, project_id:str):
+    def generate_unique_filepath(self, file_name: str, project_id:str):
         random_Key= self.generate_random_string()
         project_path= ProjectController().get_project_path(project_id=project_id)[0]
         cleaned_file_name= self.clean_file_name(file_name = file_name)
@@ -33,7 +33,7 @@ class DataController(BaseController):
 
         while os.path.exists(new_file_path):
             new_file_path= os.path.join(project_path, random_Key+"_"+cleaned_file_name)
-        return new_file_path
+        return new_file_path, random_Key
 
 
     def clean_file_name(self, file_name: str) -> str:
